@@ -1,5 +1,5 @@
 :root {
- --crema: #f3eadc;
+  --crema: #f3eadc;
   --arena: #e6dac4;
   --tinta: #1c1915;
   --gris: #5f574b;
@@ -41,7 +41,7 @@ h1, h2, h3 {
   padding: 0 20px;
 }
 
-/* ---------- Encabezado y navegaciÃ³n ---------- */
+/* ---------- Encabezado y navegación ---------- */
 .encabezado { padding: 20px 0 14px; text-align: center; }
 
 .logo {
@@ -129,47 +129,77 @@ h1, h2, h3 {
 }
 
 
-/* ---------- Catalogo ---------- */
-.catalogo { padding: 40px 0 56px; }
-.filtros {
+/* ---------- Botones ---------- */
+.boton {
+  display: inline-block;
+  padding: 14px 28px;
+  background: var(--tinta);
+  color: var(--crema);
+  font-family: var(--fuente-texto);
+  font-size: .8rem;
+  font-weight: 800;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  border: 2px solid var(--tinta);
+  cursor: pointer;
+}
+.boton:hover { background: var(--rojo); border-color: var(--rojo); }
+.boton.claro { background: transparent; color: var(--tinta); }
+.boton.claro:hover { background: var(--tinta); color: var(--crema); }
+
+/* ---------- Agenda ---------- */
+.destacado {
+  margin: 48px 0 56px;
+  border: 2px solid var(--tinta);
+}
+.destacado img { width: 100%; aspect-ratio: 1; object-fit: cover; }
+.destacado-cuerpo { padding: 24px 20px 28px; }
+.etiqueta {
+  margin: 0 0 8px;
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--rojo);
+}
+.destacado h2 { font-size: clamp(2.2rem, 7vw, 3.4rem); margin-bottom: 16px; }
+.destacado-cuerpo > p { margin: 0 0 24px; font-weight: 700; font-size: .95rem; }
+.datos {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 24px;
-  margin-bottom: 40px;
-}
-.filtros h2 { font-size: 1.5rem; margin-bottom: 14px; }
-.filtros li a {
-  display: flex;
-  justify-content: space-between;
-  padding: 10px 0;
-  border-bottom: 1px solid var(--arena);
-  font-size: .9rem;
-  font-weight: 700;
-}
-.filtros li a.activo { color: var(--rojo); }
-.filtros .grupo-estado { grid-column: 2; grid-row: 1; }
-
-.barra-resultados {
-  display: flex;
-  justify-content: space-between;
-  gap: 8px;
-  padding-bottom: 14px;
+  border: 2px solid var(--tinta);
   margin-bottom: 24px;
+}
+.datos div { padding: 12px; border-right: 2px solid var(--tinta); border-bottom: 2px solid var(--tinta); }
+.datos div:nth-child(2n) { border-right: 0; }
+.datos div:nth-last-child(-n+2) { border-bottom: 0; }
+.datos dt { font-size: .65rem; letter-spacing: .1em; text-transform: uppercase; color: var(--gris); font-weight: 700; }
+.datos dd { margin: 2px 0 0; font-size: .9rem; font-weight: 800; }
+
+.lista-eventos { border-top: 2px solid var(--tinta); }
+.evento {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 12px 16px;
+  padding: 20px 0;
   border-bottom: 2px solid var(--tinta);
+  align-items: start;
+}
+.evento-fecha { font-family: var(--fuente-titulo); text-transform: uppercase; line-height: 1; }
+.evento-fecha strong { display: block; font-weight: 400; font-size: 2.4rem; }
+.evento-fecha span { font-size: 1.2rem; }
+.evento h3 { font-size: 1.7rem; margin-bottom: 6px; }
+.evento p { margin: 0 0 12px; font-size: .85rem; color: var(--gris); }
+.precio {
+  display: inline-block;
+  padding: 8px 22px;
+  border: 2px solid var(--tinta);
   font-size: .8rem;
-  font-weight: 700;
+  font-weight: 800;
+  text-transform: uppercase;
 }
 
-.rejilla-discos {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px 16px;
-}
-.disco img { width: 100%; aspect-ratio: 1; object-fit: cover; border: 2px solid var(--tinta); }
-.disco-info { margin-top: 10px; }
-.disco-titulo { margin: 0; font-size: .95rem; font-weight: 700; line-height: 1.3; }
-.disco-artista { margin: 0; font-size: .8rem; color: var(--gris); }
-.disco-precio { margin: 4px 0 0; font-size: .95rem; font-weight: 800; }
+main { padding-bottom: 56px; }
 
 /* ============================================================
    ESCRITORIO
@@ -194,19 +224,11 @@ h1, h2, h3 {
   .pie h3 { margin-top: 0; }
   .pie-final { flex-direction: row; justify-content: space-between; }
 
-  .catalogo .contenedor {
-    display: grid;
-    grid-template-columns: 220px 1fr;
-    gap: 48px;
-    align-items: start;
-  }
-  .filtros { display: block; margin-bottom: 0; }
-  .filtros .grupo-estado { margin-top: 32px; }
-  .rejilla-discos { grid-template-columns: repeat(3, 1fr); gap: 32px 24px; }
-  .disco-info {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 0 12px;
-  }
-  .disco-precio { grid-row: 1 / span 2; grid-column: 2; margin: 0; }
+  .destacado { display: grid; grid-template-columns: 1fr 1fr; }
+  .destacado img { height: 100%; aspect-ratio: auto; }
+  .destacado-cuerpo { padding: 40px; align-self: center; }
+
+  .evento { grid-template-columns: 130px 1fr auto; align-items: center; padding: 22px 0; }
+  .evento p { margin: 0; }
+  .evento-fecha strong { font-size: 3rem; }
 }
