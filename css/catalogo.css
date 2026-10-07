@@ -1,0 +1,212 @@
+:root {
+ --crema: #f3eadc;
+  --arena: #e6dac4;
+  --tinta: #1c1915;
+  --gris: #5f574b;
+  --rojo: #d8402a;
+  --mostaza: #e0a324;
+  --verde: #2e5e4e;
+  --azul: #2b4a7a;
+  --fuente-titulo: "Anton", "Bebas Neue", Impact, sans-serif;
+  --fuente-texto: "Work Sans", Arial, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: var(--fuente-texto);
+  font-weight: 600;
+  line-height: 1.6;
+  color: var(--tinta);
+  background: var(--crema);
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+ul { list-style: none; margin: 0; padding: 0; }
+
+h1, h2, h3 {
+  font-family: var(--fuente-titulo);
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: 1;
+  margin: 0;
+}
+
+.contenedor {
+  width: 100%;
+  max-width: 1168px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ---------- Encabezado y navegaciÃ³n ---------- */
+.encabezado { padding: 20px 0 14px; text-align: center; }
+
+.logo {
+  display: inline-block;
+  font-family: var(--fuente-titulo);
+  font-size: 2.2rem;
+  line-height: 1;
+  text-transform: uppercase;
+}
+.logo span { color: var(--rojo); }
+
+.nav { margin-top: 10px; }
+.nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 20px;
+}
+.nav a {
+  display: inline-block;
+  padding: 4px 0;
+  font-size: .8rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  border-bottom: 3px solid transparent;
+}
+.nav a:hover { border-bottom-color: var(--tinta); }
+.nav a.activo { border-bottom-color: var(--rojo); }
+
+.cinta {
+  background: var(--tinta);
+  color: var(--crema);
+  text-align: center;
+  padding: 10px 8px;
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+
+/* ---------- Cabecera de página ---------- */
+.cabecera-pagina {
+  padding: 48px 0 36px;
+  border-bottom: 2px solid var(--tinta);
+}
+.cabecera-pagina h1 { font-size: clamp(3.5rem, 13vw, 7rem); }
+.cabecera-pagina p {
+  max-width: 34rem;
+  margin: 12px 0 0;
+  font-size: 1.05rem;
+  color: var(--gris);
+}
+
+.seccion { padding: 48px 0; }
+.seccion h2 { font-size: clamp(2rem, 6vw, 2.8rem); margin-bottom: 24px; }
+
+/* ---------- Pie de página ---------- */
+.pie {
+  background: var(--tinta);
+  color: var(--crema);
+  padding: 48px 0 28px;
+  margin-top: 0;
+}
+.pie .logo { font-size: 3rem; }
+.pie-marca p { margin: 14px 0 0; font-size: .95rem; }
+.pie h3 {
+  font-family: var(--fuente-texto);
+  font-size: .75rem;
+  font-weight: 800;
+  letter-spacing: .18em;
+  color: var(--mostaza);
+  margin: 32px 0 12px;
+}
+.pie li { margin-bottom: 8px; font-size: .95rem; }
+.pie a:hover { color: var(--mostaza); }
+.pie-final {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #4a443b;
+  font-size: .75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+
+/* ---------- Catalogo ---------- */
+.catalogo { padding: 40px 0 56px; }
+.filtros {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 40px;
+}
+.filtros h2 { font-size: 1.5rem; margin-bottom: 14px; }
+.filtros li a {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--arena);
+  font-size: .9rem;
+  font-weight: 700;
+}
+.filtros li a.activo { color: var(--rojo); }
+.filtros .grupo-estado { grid-column: 2; grid-row: 1; }
+
+.barra-resultados {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  padding-bottom: 14px;
+  margin-bottom: 24px;
+  border-bottom: 2px solid var(--tinta);
+  font-size: .8rem;
+  font-weight: 700;
+}
+
+.rejilla-discos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px 16px;
+}
+.disco img { width: 100%; aspect-ratio: 1; object-fit: cover; border: 2px solid var(--tinta); }
+.disco-info { margin-top: 10px; }
+.disco-titulo { margin: 0; font-size: .95rem; font-weight: 700; line-height: 1.3; }
+.disco-artista { margin: 0; font-size: .8rem; color: var(--gris); }
+.disco-precio { margin: 4px 0 0; font-size: .95rem; font-weight: 800; }
+
+/* ============================================================
+   ESCRITORIO
+   ============================================================ */
+@media (min-width: 768px) {
+  .contenedor { padding: 0 40px; }
+
+  .encabezado .contenedor {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .encabezado { padding: 22px 0; text-align: left; }
+  .nav { margin-top: 0; }
+  .nav ul { gap: 8px 28px; }
+  .nav a { font-size: .75rem; }
+  .cinta { padding: 12px; font-size: .75rem; }
+
+  .cabecera-pagina { padding: 64px 0 40px; }
+
+  .pie-contenido { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 24px; }
+  .pie h3 { margin-top: 0; }
+  .pie-final { flex-direction: row; justify-content: space-between; }
+
+  .catalogo .contenedor {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 48px;
+    align-items: start;
+  }
+  .filtros { display: block; margin-bottom: 0; }
+  .filtros .grupo-estado { margin-top: 32px; }
+  .rejilla-discos { grid-template-columns: repeat(3, 1fr); gap: 32px 24px; }
+  .disco-info {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 0 12px;
+  }
+  .disco-precio { grid-row: 1 / span 2; grid-column: 2; margin: 0; }
+}
