@@ -614,3 +614,543 @@ main {
         gap: 10px;
     }
 }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f2eadb;
+    color: #1b1a18;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.header {
+    min-height: 74px;
+    padding: 0 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #1b1a18;
+    background-color: #f2eadb;
+}
+
+.logo {
+    font-size: 29px;
+    font-weight: 900;
+    letter-spacing: -2px;
+}
+
+.logo span {
+    color: #dd3e2b;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.nav a {
+    font-size: 11px;
+    font-weight: bold;
+    padding: 28px 0 17px;
+    border-bottom: 2px solid transparent;
+}
+
+.nav a:hover,
+.nav .activo {
+    border-bottom-color: #dd3e2b;
+}
+
+.barra {
+    min-height: 32px;
+    padding: 8px 15px;
+    background-color: #1b1a18;
+    color: #f2eadb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.titulo-nosotros {
+    padding: 50px 8% 35px;
+    border-bottom: 1px solid #1b1a18;
+}
+
+.titulo-nosotros h1 {
+    font-size: clamp(55px, 7vw, 90px);
+    line-height: 0.9;
+    letter-spacing: -4px;
+    font-weight: 900;
+    margin-bottom: 12px;
+}
+
+.titulo-nosotros p {
+    max-width: 500px;
+    font-size: 17px;
+    line-height: 1.5;
+    font-weight: bold;
+    color: #625d56;
+}
+
+.historia {
+    width: 84%;
+    margin: auto;
+    padding: 62px 0;
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 80px;
+}
+
+.historia-titulo h2 {
+    max-width: 520px;
+    font-size: 26px;
+    line-height: 1.25;
+}
+
+.historia-texto {
+    font-size: 14px;
+    line-height: 1.55;
+    font-weight: bold;
+}
+
+.historia-texto p {
+    margin-bottom: 20px;
+}
+
+.estadisticas {
+    width: 84%;
+    margin: 0 auto 55px;
+    border-top: 1px solid #1b1a18;
+    border-bottom: 1px solid #1b1a18;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.estadistica {
+    min-height: 150px;
+    padding: 32px 18px;
+    border-right: 1px solid #1b1a18;
+}
+
+.estadistica:last-child {
+    border-right: none;
+}
+
+.estadistica strong {
+    display: block;
+    color: #dd3e2b;
+    font-size: 58px;
+    line-height: 1;
+    letter-spacing: -3px;
+    margin-bottom: 15px;
+}
+
+.estadistica strong span {
+    font-size: 35px;
+}
+
+.estadistica p {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.personas {
+    width: 84%;
+    margin: auto;
+    padding: 0 0 70px;
+}
+
+.personas > h2 {
+    font-size: 42px;
+    letter-spacing: -2px;
+    margin-bottom: 30px;
+}
+
+.personas-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.persona {
+    min-height: 245px;
+    padding: 22px;
+    border: 1px solid #1b1a18;
+    background-color: #f2eadb;
+}
+
+.avatar {
+    position: relative;
+    width: 74px;
+    height: 74px;
+    border-radius: 50%;
+    border: 1px solid #1b1a18;
+    overflow: hidden;
+    margin-bottom: 16px;
+}
+
+.avatar-rojo {
+    background-color: #dd3e2b;
+}
+
+.avatar-amarillo {
+    background-color: #e5a91f;
+}
+
+.avatar-verde {
+    background-color: #315e54;
+}
+
+.cabeza {
+    position: absolute;
+    width: 27px;
+    height: 27px;
+    border-radius: 50%;
+    background-color: #e9a093;
+    top: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.cuerpo {
+    position: absolute;
+    width: 52px;
+    height: 38px;
+    border-radius: 30px 30px 0 0;
+    background-color: #e9a093;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.avatar-amarillo .cabeza,
+.avatar-amarillo .cuerpo {
+    background-color: #f3c75a;
+}
+
+.avatar-verde .cabeza,
+.avatar-verde .cuerpo {
+    background-color: #8cb6ac;
+}
+
+
+.persona h3 {
+    font-size: 22px;
+    letter-spacing: -1px;
+    margin-bottom: 5px;
+}
+
+.cargo {
+    color: #69635c;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.recomendacion {
+    margin-top: 17px;
+    padding-top: 12px;
+    border-top: 1px dashed #777;
+}
+
+.recomendacion span {
+    color: #dd3e2b;
+    font-size: 9px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.recomendacion p {
+    margin-top: 5px;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+    background-color: #1b1a18;
+    color: #f2eadb;
+    padding: 55px 8% 25px;
+}
+
+.footer-contenido {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 45px;
+    padding-bottom: 45px;
+}
+
+.footer-logo h2 {
+    font-size: 42px;
+    letter-spacing: -3px;
+    margin-bottom: 15px;
+}
+
+.footer-logo h2 span {
+    color: #dd3e2b;
+}
+
+.footer-logo p {
+    font-size: 11px;
+    line-height: 1.7;
+    font-weight: bold;
+}
+
+.footer-columna {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-columna h3 {
+    color: #e5a91f;
+    font-size: 10px;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+}
+
+.footer-columna a {
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.footer-columna a:hover {
+    color: #dd3e2b;
+}
+
+.footer-final {
+    border-top: 1px solid #5b5853;
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    font-size: 9px;
+    font-weight: bold;
+}
+
+@media (max-width: 900px) {
+
+    .header {
+        padding: 20px 5%;
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .nav a {
+        padding: 5px;
+    }
+
+    .historia {
+        width: 90%;
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .estadisticas {
+        width: 90%;
+    }
+
+    .personas {
+        width: 90%;
+    }
+
+    .personas-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .footer {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .footer-contenido {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .header {
+        padding: 18px 20px;
+    }
+
+    .logo {
+        font-size: 27px;
+    }
+
+    .nav {
+        width: 100%;
+        gap: 8px 15px;
+    }
+
+    .nav a {
+        font-size: 9px;
+        padding: 4px 0;
+    }
+
+    .barra {
+        font-size: 7px;
+        letter-spacing: 1px;
+    }
+
+    .titulo-nosotros {
+        padding: 45px 20px 30px;
+    }
+
+    .titulo-nosotros h1 {
+        font-size: 55px;
+        letter-spacing: -3px;
+    }
+
+    .titulo-nosotros p {
+        font-size: 14px;
+    }
+
+    .historia {
+        width: auto;
+        margin: 0;
+        padding: 40px 20px;
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .historia-titulo h2 {
+        font-size: 21px;
+    }
+
+    .historia-texto {
+        font-size: 13px;
+    }
+
+    .estadisticas {
+        width: auto;
+        margin: 0 20px 45px;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .estadistica {
+        min-height: 125px;
+        padding: 22px 15px;
+    }
+
+    .estadistica:nth-child(2) {
+        border-right: none;
+    }
+
+    .estadistica:nth-child(3),
+    .estadistica:nth-child(4) {
+        border-top: 1px solid #1b1a18;
+    }
+
+    .estadistica strong {
+        font-size: 43px;
+    }
+
+    .estadistica p {
+        font-size: 10px;
+    }
+
+    .personas {
+        width: auto;
+        padding: 0 20px 50px;
+    }
+
+    .personas > h2 {
+        font-size: 32px;
+        letter-spacing: -1px;
+    }
+
+    .personas-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .persona {
+        min-height: auto;
+    }
+
+    .footer {
+        padding: 45px 20px 20px;
+    }
+
+    .footer-contenido {
+        grid-template-columns: 1fr 1fr;
+        gap: 35px 20px;
+    }
+
+    .footer-logo {
+        grid-column: 1 / -1;
+    }
+
+    .footer-logo h2 {
+        font-size: 38px;
+    }
+
+    .footer-final {
+        flex-direction: column;
+        gap: 10px;
+        font-size: 8px;
+    }
+}
+
+@media (max-width: 400px) {
+
+    .nav {
+        gap: 7px 10px;
+    }
+
+    .nav a {
+        font-size: 8px;
+    }
+
+    .titulo-nosotros h1 {
+        font-size: 47px;
+    }
+
+    .estadisticas {
+        grid-template-columns: 1fr;
+    }
+
+    .estadistica {
+        border-right: none !important;
+        border-top: 1px solid #1b1a18;
+    }
+
+    .estadistica:first-child {
+        border-top: none;
+    }
+
+    .footer-contenido {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-logo {
+        grid-column: auto;
+    }
+}
