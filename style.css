@@ -1,0 +1,333 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Work+Sans:wght@400;600;700&display=swap');
+
+:root {
+  --papel: #f2ebdd;
+  --papel-oscuro: #e6dcc8;
+  --tinta: #1c1a17;
+  --gris: #6b645a;
+  --rojo: #d6402b;
+  --mostaza: #e0a526;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--papel);
+  color: var(--tinta);
+  font-family: 'Work Sans', sans-serif;
+  font-size: 16px;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+
+h1, h2, h3, .logo, .footer-logo {
+  font-family: 'Anton', sans-serif;
+  text-transform: uppercase;
+  font-weight: 400;
+  letter-spacing: .2px;
+  margin: 0;
+}
+
+.site-header {
+  background: var(--papel);
+  border-bottom: 0;
+}
+.navbar {
+  max-width: 1320px;
+  min-height: 96px;
+  margin: auto;
+  padding: 0 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo { font-size: 34px; }
+.logo::after, .footer-logo::after { content: '.'; color: var(--rojo); }
+.nav-links {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+.nav-links a {
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 7px 0;
+  border-bottom: 2px solid transparent;
+}
+.nav-links a:hover,
+.nav-links a.active { border-bottom-color: var(--rojo); }
+
+.ticker {
+  background: var(--tinta);
+  color: var(--papel);
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 9px 20px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* ---------- DISCO ---------- */
+.disco-main { max-width: 1320px; margin: auto; }
+.disco-hero {
+  padding: 76px 70px 72px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 62px;
+  align-items: start;
+}
+.disco-cover img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border: 2px solid var(--tinta);
+}
+.eyebrow {
+  color: var(--rojo);
+  font-size: 13px;
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.disco-info h1 { font-size: 64px; line-height: .98; }
+.artist { font-size: 20px; font-weight: 700; margin: 8px 0 22px; }
+.price { color: var(--rojo); font-size: 36px; font-weight: 700; margin: 0 0 28px; }
+.description { font-size: 16px; font-weight: 600; line-height: 1.6; margin: 0 0 24px; max-width: 650px; }
+.btn {
+  display: inline-block;
+  background: var(--tinta);
+  color: var(--papel);
+  border: 2px solid var(--tinta);
+  padding: 13px 23px;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.btn:hover { background: var(--rojo); border-color: var(--rojo); }
+
+.specs {
+  margin-top: 28px;
+  border: 2px solid var(--tinta);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.spec {
+  padding: 15px 16px;
+  border-right: 2px solid var(--tinta);
+  border-bottom: 2px solid var(--tinta);
+}
+.spec:nth-child(2n) { border-right: 0; }
+.spec:nth-last-child(-n+2) { border-bottom: 0; }
+.spec span {
+  display: block;
+  color: var(--gris);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+.spec strong { font-size: 14px; }
+
+.tracklist { margin-top: 25px; }
+.tracklist h2 { font-size: 28px; margin-bottom: 12px; }
+.tracks { margin-bottom: 28px; }
+.track {
+  min-height: 52px;
+  border-bottom: 1px solid var(--papel-oscuro);
+  display: grid;
+  grid-template-columns: 28px 1fr auto;
+  gap: 10px;
+  align-items: center;
+  font-size: 15px;
+  font-weight: 600;
+}
+.track-number { color: var(--rojo); font-weight: 700; }
+.track-time { color: var(--gris); }
+
+.related {
+  border-top: 2px solid var(--tinta);
+  padding: 66px 70px 72px;
+}
+.related h2 { font-size: 42px; margin-bottom: 34px; }
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+}
+.album-card img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border: 2px solid var(--tinta);
+}
+.album-info {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px;
+  margin-top: 8px;
+}
+.album-info strong { font-size: 14px; }
+.album-info span { display: block; color: var(--gris); font-size: 13px; font-weight: 600; }
+.album-price { font-weight: 700; font-size: 14px; }
+
+/* ---------- CONTACTO ---------- */
+.contact-intro {
+  border-bottom: 2px solid var(--tinta);
+  padding: 76px max(70px, calc((100% - 1180px) / 2)) 58px;
+}
+.contact-intro h1 { font-size: 82px; line-height: .95; }
+.contact-intro p { max-width: 620px; font-size: 20px; line-height: 1.45; font-weight: 600; color: var(--gris); margin: 10px 0 0; }
+.contact-section {
+  max-width: 1180px;
+  margin: auto;
+  padding: 70px 0 90px;
+  display: grid;
+  grid-template-columns: 1.45fr 1fr;
+  gap: 62px;
+}
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 25px 20px; }
+.field.full { grid-column: 1 / -1; }
+.field label {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 9px;
+}
+.field input, .field select, .field textarea {
+  width: 100%;
+  border: 2px solid var(--tinta);
+  border-radius: 0;
+  background: transparent;
+  color: var(--tinta);
+  padding: 13px 14px;
+  font: 600 15px 'Work Sans', sans-serif;
+  outline: none;
+}
+.field input, .field select { height: 48px; }
+.field textarea { min-height: 170px; resize: vertical; }
+.field input:focus, .field select:focus, .field textarea:focus { border-color: var(--rojo); }
+.form-actions { margin-top: 20px; }
+
+.contact-map img {
+  width: 100%;
+  border: 2px solid var(--tinta);
+  aspect-ratio: 1.25 / 1;
+  object-fit: cover;
+}
+.contact-details { margin-top: 24px; }
+.contact-details h2 { font-size: 28px; margin: 0 0 7px; }
+.contact-details p { font-size: 16px; font-weight: 600; line-height: 1.5; margin: 0 0 22px; }
+.hours { margin-top: 6px; }
+.hour-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 13px 0;
+  border-bottom: 1px dashed var(--gris);
+  font-weight: 600;
+}
+
+/* ---------- FOOTER ---------- */
+.site-footer {
+  background: var(--tinta);
+  color: var(--papel);
+  padding: 60px max(70px, calc((100% - 1180px) / 2)) 24px;
+}
+.footer-top {
+  display: grid;
+  grid-template-columns: 1.7fr 1fr 1fr 1fr;
+  gap: 45px;
+  padding-bottom: 45px;
+}
+.footer-logo { font-size: 48px; color: var(--papel); }
+.footer-brand p { margin: 15px 0 0; line-height: 1.6; font-weight: 600; }
+.footer-col h3 {
+  color: var(--mostaza);
+  font-family: 'Work Sans', sans-serif;
+  font-size: 13px;
+  letter-spacing: 2px;
+  margin-bottom: 18px;
+}
+.footer-col a { display: block; font-size: 15px; font-weight: 600; margin-bottom: 12px; }
+.footer-bottom {
+  border-top: 1px solid #5b574f;
+  padding-top: 18px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+@media (max-width: 900px) {
+  .navbar { padding: 18px 30px; min-height: auto; flex-direction: column; gap: 14px; }
+  .nav-links { justify-content: center; gap: 18px; }
+  .disco-hero { grid-template-columns: 1fr; padding: 42px 30px 55px; gap: 35px; }
+  .disco-info h1 { font-size: 58px; }
+  .related { padding: 50px 30px 60px; }
+  .related-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  .contact-intro { padding: 60px 30px 45px; }
+  .contact-intro h1 { font-size: 68px; }
+  .contact-section { padding: 55px 30px 70px; grid-template-columns: 1fr; gap: 50px; }
+  .site-footer { padding: 55px 30px 22px; }
+  .footer-top { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+  body { font-size: 16px; }
+  .navbar { padding: 18px 12px 13px; }
+  .logo { font-size: 28px; }
+  .nav-links { gap: 8px 18px; }
+  .nav-links a { font-size: 12px; padding: 4px 0; }
+  .ticker { font-size: 10px; letter-spacing: 1.4px; line-height: 1.5; min-height: 50px; }
+
+  .disco-hero { padding: 42px 12px 40px; gap: 34px; }
+  .disco-info h1 { font-size: 42px; }
+  .artist { font-size: 16px; margin-top: 5px; }
+  .price { font-size: 30px; margin-bottom: 25px; }
+  .description { font-size: 13px; line-height: 1.55; }
+  .btn { font-size: 11px; padding: 11px 16px; }
+  .spec { padding: 11px 9px; }
+  .spec span { font-size: 9px; }
+  .spec strong { font-size: 11px; }
+  .tracklist h2 { font-size: 22px; }
+  .track { min-height: 42px; font-size: 11px; grid-template-columns: 22px 1fr auto; }
+  .related { padding: 40px 12px 48px; }
+  .related h2 { font-size: 27px; margin-bottom: 23px; }
+  .related-grid { gap: 20px 12px; }
+  .album-info { grid-template-columns: 1fr; gap: 2px; }
+  .album-info strong, .album-info span, .album-price { font-size: 11px; }
+
+  .contact-intro { padding: 48px 15px 30px; }
+  .contact-intro h1 { font-size: 52px; }
+  .contact-intro p { font-size: 15px; line-height: 1.45; margin-top: 8px; }
+  .contact-section { padding: 52px 15px 52px; gap: 44px; }
+  .form-grid { grid-template-columns: 1fr; gap: 26px; }
+  .field.full { grid-column: auto; }
+  .field label { font-size: 10px; margin-bottom: 8px; }
+  .field input, .field select, .field textarea { font-size: 12px; }
+  .field textarea { min-height: 105px; }
+  .contact-map img { aspect-ratio: 1 / .75; }
+  .contact-details h2 { font-size: 23px; }
+  .contact-details p, .hour-row { font-size: 12px; }
+  .hour-row { padding: 11px 0; }
+
+  .site-footer { padding: 48px 15px 20px; }
+  .footer-top { grid-template-columns: 1fr; gap: 35px; padding-bottom: 35px; }
+  .footer-logo { font-size: 42px; }
+  .footer-brand p { font-size: 12px; }
+  .footer-col a { font-size: 12px; }
+  .footer-bottom { flex-direction: column; font-size: 10px; gap: 8px; }
+}
